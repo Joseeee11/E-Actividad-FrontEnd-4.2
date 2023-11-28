@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+
+  height: 10vh;
+}
+
+h1 {
+  margin: auto auto auto 8px;
+}
+.pestanas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.pestanas button span{
+  margin: auto 5px;
+  padding: 4px 7px;
+  background-color: #3377f7;
+  border-radius: 40%;
+}
+
+.pestanas button img {
+  width: 3vh;
+
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 720px) and (max-height: 1280px) {
+  header {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
+  .pestanas button span{
+    display: inline-block;
+    margin: 2px 5px;
+  }
+}
