@@ -1,32 +1,27 @@
 import {useEffect, useState} from 'react';
-import { Prueba } from './Prueba';
-import {Leer} from './Leer'
+import {Renderizar} from './Renderizar'
 import IconoCrear from './media/iconos/create.svg'
 // import { Header } from './Header';
 
 
-//API con LOCALSTORAGE
+//Leer el LOCALSTORAGE
 
-export function API() {
-    let [tareas, setTareas] = useState(
-        JSON.parse(localStorage.getItem("tareas")) || []
-      );  //tareas = estado actual ; setTareas = funcion para actualizar estado
+export function Read() {
+    let [tareas, setTareas] = useState([]);  //tareas = estado actual ; setTareas = funcion para actualizar estado
 
     //descomentar cuando se acaben las tareas xd
     // tareas = [ {titulo:'Tarea 1', descripcion:'lolaaa'}, {titulo:'Tarea 2', descripcion:'ame un'}, {titulo:'Tarea 3', descripcion:'tikitiki'}]
 
     //guardar la lista de tareas del localstorage
-      
-      useEffect(() => {
-        function manejarCambioEnLocalStorage(evento) {
-          if (evento.key === "tareas") {
-            setTareas(JSON.parse(evento.newValue));
-          }
+    useEffect(() => {
+        const listaTareas = JSON.parse(localStorage.getItem('tareas'));
+        if (listaTareas) {
+            setTareas(listaTareas); //la mandamos a que actualice la lista en el front
+        } else {
+            console.log('no hay tareas')
+            setTareas([]); //pa que no de error al estar vacio gente (tecnicamente no se si era por esto el error pero bueno porsia)
         }
-        window.addEventListener("storage", manejarCambioEnLocalStorage);
-    
-      }, []);
-    
+    }, []);
 
     //actualizamos la lista en el localstorage
     useEffect(() => {
@@ -42,6 +37,7 @@ export function API() {
     }
 
     console.log(activo)
+    console.log(tareas)
 
     return <> 
         <div className='pestanas'>
@@ -51,7 +47,7 @@ export function API() {
             <button onClick={() => pestañas(4) } className={activo === 4 ? 'button-activo' : 'button-desactivo'} > <img src={IconoCrear} alt='Crear Lista'/> </button>
         </div>
         <section className='contenedor-bloques'>
-            <section className={activo === 1 ? 'bloque-activo' : 'bloque-desactivo'} ><Prueba tareas={tareas} setTareas={setTareas}/> <Leer tareas={tareas} setTareas={setTareas}/> </section>
+            <section className={activo === 1 ? 'bloque-activo' : 'bloque-desactivo'} ><Renderizar tareas={tareas} setTareas={setTareas}/> </section>
             <section className={activo === 2 ? 'bloque-activo' : 'bloque-desactivo'} >Realizadas</section>
             <section className={activo === 3 ? 'bloque-activo' : 'bloque-desactivo'} >Completas</section>
             <section className={activo === 4 ? 'bloque-activo' : 'bloque-desactivo'} >Crear</section>

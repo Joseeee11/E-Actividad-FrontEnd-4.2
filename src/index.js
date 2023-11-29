@@ -9,14 +9,14 @@ import './CSS/index.css';
 
 //importamos complementos
 import { Header } from './Header';
-import { API } from './API';
+import { Read } from './Read';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <Header/>
     <div>
-      <API/>
+      <Read/>
     </div>
   </>
 );
