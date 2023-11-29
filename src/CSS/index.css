@@ -70,12 +70,10 @@ p {
   width: 100%;
 }
 .bloque-desactivo {
-  opacity: 0;
-  z-index: -1;
+  display: none;
 }
 .bloque-activo {
-  opacity: 1;
-  z-index: 1;
+  display: block;
 }
 .button-desactivo {
   background-color: #83A2FF;
@@ -97,7 +95,8 @@ p {
   border-radius: 20px;
 }
 /* Seccion de la fecha y check de completado */
-.fecha-check , .importancia-botones{
+.fecha-check , 
+.importancia-botones{
   text-align: center;
 
   display: flex;
@@ -133,6 +132,7 @@ p {
 }
 .titulo-descripcion h2 {
   font-size: 3.5vh;
+  margin-bottom: 2.2vh;
 }
 .tachado {
   text-decoration: line-through;
@@ -183,6 +183,65 @@ p {
   outline: 2px solid #035042;
 }
 
+/* FORMULARIO */
+.formulario {
+  margin: 3vh auto;
+  padding: 4.5vh;
+
+  background-color: #FFE3BB;
+  border-radius: 20px;
+  width: 60%;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2.5vh;
+}
+.formulario h2 {
+  text-align: center;
+  margin: auto;
+}
+.formulario label {
+  font-size: 3vh;
+  padding: 1vh 3vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vh;
+}
+.formulario input, 
+.formulario select, 
+.formulario textarea {
+  width: 100%;
+  height: 5vh;
+  border-radius: 30px;
+  border: 2px solid #FFD28F;
+  font-size: 2.3vh;
+}
+.formulario select option , .formulario input {
+  font-family: 'Jua', sans-serif;
+  padding-left: 10px;
+}
+.formulario textarea {
+  font-family: 'Jua', sans-serif;
+  padding: 10px;
+}
+.formulario button {
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+
+  background-color: #B4BDFF;
+  border-radius: 10px;
+  border: 1px solid #9ea9f8;
+
+  font-size: 2.5vh;
+}
+.formulario button:hover {
+  background-color: #83A2FF;
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 720px) and (max-height: 1280px) {
   h1 {
@@ -231,6 +290,19 @@ p {
     width: 80%;
   }
 
-  /* botones delete edit */
-  
+  /* formulario */
+  .formulario {
+    width: 70%;
+  }
+  .formulario h2 {
+    font-size: 3vh;
+  }
+  .formulario label {
+    font-size: 2.2vh;
+    padding: 1vh;
+    gap: 1.5vh;
+  }
+  .formulario button {
+    width: 70%;
+  }
 }

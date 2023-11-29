@@ -2,7 +2,7 @@ import imagenOso from "./media/OsoLista.png";
 
 export function PorHacer({tareas}) {
 
-    const tareasPorHacer = tareas.filter(tarea => tarea.estado === "false");
+    const tareasPorHacer = tareas.filter(tarea => tarea.estado === false);
     console.log(tareasPorHacer);
 
     if (!tareasPorHacer || tareasPorHacer.length === 0) {

@@ -6,7 +6,7 @@ const TaskForm = ({setTareas}) => {
     descripcion: '',
     importance: '',
     date: '',
-    estado: 'false'
+    estado: false
   });
 
   const handleChange = (e) => {
@@ -34,22 +34,25 @@ const TaskForm = ({setTareas}) => {
       descripcion: '',
       importance: '',
       date: '',
-      estado: 'false'
+      estado: false
     });
   };
 
   return (
-    <form>
+    <form className='formulario'>
+
+      <h2>Crea una Nueva Tarea</h2>
+
       <label>
         Título:
         <input type="text" name="titulo" value={task.titulo} onChange={handleChange} />
       </label>
-      <br />
+
       <label>
         Descripción:
         <textarea name="descripcion" value={task.descripcion} onChange={handleChange} />
       </label>
-      <br />
+ 
       <label>
         Importancia:
         <select name="importance" value={task.importance} onChange={handleChange}>
@@ -59,13 +62,13 @@ const TaskForm = ({setTareas}) => {
           <option value="NORMAL">Normal</option>
         </select>
       </label>
-      <br />
+
       <label>
         Fecha:
         <input type="date" name="date" value={task.date} onChange={handleChange} />
       </label>
-      <br />
-      <button onClick={handleSaveTask}>Guardar tarea</button>
+ 
+      <button onClick={handleSaveTask}>Guardar Tarea</button>
     </form>
   );
 };
