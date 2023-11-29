@@ -123,6 +123,9 @@ p {
 .titulo-descripcion h2 {
   font-size: 3.5vh;
 }
+.tachado {
+  text-decoration: line-through;
+}
 .titulo-descripcion p {
   font-size: 2vh;
 }
@@ -203,7 +206,5 @@ p {
   }
 
   /* botones delete edit */
-  .delete , .edit {
-    /* width: ; */
-  }
+  
 }
