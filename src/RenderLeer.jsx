@@ -1,9 +1,10 @@
 import imagenOso from "./media/_7decf490-d2ac-4192-85c2-0efcbe73cd8c.png";
+import { ButtonDelete } from './Delete'
 
 export function RenderizandoLeer(resultados) {
    
   let arrayResult = resultados.resultado;
-  if (arrayResult.length == 0 || !arrayResult) {
+  if (arrayResult.length === 0 || !arrayResult) {
     return (
       <>
         <img src={imagenOso} alt="Oso con una lista" />

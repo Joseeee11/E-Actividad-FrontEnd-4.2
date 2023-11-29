@@ -12,27 +12,24 @@ export function Leer() {
   // localStorage.setItem("tareas", JSON.stringify(task));
   // //
   let storage = [];
-  const [Tareas, setTareas] = useState([]);
 
-  const [Cambios, setCambios] = useState(
+  const [Tareas, setTareas] = useState(
     JSON.parse(localStorage.getItem("tareas")) || []
   );
   
   useEffect(() => {
     function manejarCambioEnLocalStorage(evento) {
       if (evento.key === "tareas") {
-        setCambios(JSON.parse(evento.newValue));
+        setTareas(JSON.parse(evento.newValue));
       }
     }
     window.addEventListener("storage", manejarCambioEnLocalStorage);
-    return () => {
-      window.removeEventListener("storage", manejarCambioEnLocalStorage);
-    };
+
   }, []);
 
-  useEffect(function (params) {
+  useEffect(function () {
     Todos();
-  }, [Cambios]);
+  }, [Tareas]);
 
   
   async function Todos() {
