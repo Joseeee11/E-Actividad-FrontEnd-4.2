@@ -15,6 +15,7 @@ export function API() {
         if (listaTareas) {
             setTareas(listaTareas); //la mandamos a que actualice la lista en el front
         } else {
+            console.log('no hay tareas')
             setTareas([]); //pa que no de error al estar vacio gente (tecnicamente no se si era por esto el error pero bueno porsia)
         }
     }, []);
