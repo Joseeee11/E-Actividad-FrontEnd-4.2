@@ -1,4 +1,3 @@
-// import Papelera from './media/iconos/trash.svg'
 import IconoPapelera from './media/iconos/trash-can-regular.svg'
 
 export function ButtonDelete({posicion, tareas, setTareas}) {
