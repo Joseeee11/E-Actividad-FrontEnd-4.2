@@ -1,6 +1,6 @@
 /* Paleta: #404067 #1a1a40 #333*/
 
-.boton-modo-oscuro {
+  .boton-modo-oscuro {
     padding: 0.5rem 1rem;
     background-color: #007bff;
     color: #fff;
@@ -50,3 +50,26 @@
     background-color: #404067;
     color: #f2f2f2;
   }
+
+  .modo-oscuro .tarea {
+    background-color: #333;
+  }
+
+  .modo-oscuro .titulo-descripcion {
+    background-color: #404067
+  }
+
+  .modo-oscuro .urgente {
+    background-color: #820000;
+    border: 2px solid #f3897b;
+  }
+  .modo-oscuro .importante {
+    background-color: #4a6f22;
+    border: 2px solid #9bf285;
+  }
+  .modo-oscuro .normal {
+    background-color: #00008B;
+    border: 2px solid #5df6ea;
+  }
+
+
