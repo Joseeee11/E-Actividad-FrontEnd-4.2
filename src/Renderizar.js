@@ -1,6 +1,7 @@
 import imagenOso from "./media/OsoLista.png";
 import { ButtonDelete } from './Delete'
 import { ButtonCheck } from './Check'
+import { ButtonEditar } from './Edit'
 
 import IconoEditar from './media/iconos/pencil-solid.svg'
 
@@ -26,9 +27,9 @@ export function RenderizarTodas({tareas, setTareas}) {
               </div>
               <div className="importancia-botones">
                 <h3 className={tarea.importance === 'IMPORTANTE' ? 'importante' : tarea.importance === 'URGENTE' ? 'urgente' : 'normal'} >{tarea.importance}</h3>
-                <div>
+                <div className="divBotones">
                   <ButtonDelete posicion={i} tareas={tareas} setTareas={setTareas} />
-                  <button className='edit' onClick={() => console.log('editar')}> <img src={IconoEditar} alt='Editar Tarea'/> </button> {/*mientras tanto */}
+                  <ButtonEditar posicion={i} tareas={tareas} setTareas={setTareas} />
                 </div>
               </div>
             </div>

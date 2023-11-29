@@ -11,10 +11,6 @@ import IconoCrear from './media/iconos/create.svg'
 
 export function Read() {
     let [tareas, setTareas] = useState([]);  //tareas = estado actual ; setTareas = funcion para actualizar estado
-
-    //descomentar cuando se acaben las tareas xd
-    // tareas = [ {titulo:'Tarea 1', descripcion:'lolaaa'}, {titulo:'Tarea 2', descripcion:'ame un'}, {titulo:'Tarea 3', descripcion:'tikitiki'}]
-
     //guardar la lista de tareas del localstorage
     useEffect(() => {
         const listaTareas = JSON.parse(localStorage.getItem('tareas'));
