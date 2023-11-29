@@ -1,5 +1,7 @@
 import {useEffect, useState} from 'react';
 import {RenderizarTodas} from './Renderizar'
+import { PorHacer } from "./RenderizarCategoria";
+import { Completadas } from "./RenderizarCategoria";
 import TaskForm from './Crear'
 import IconoCrear from './media/iconos/create.svg'
 // import { Header } from './Header';
@@ -49,8 +51,8 @@ export function Read() {
         </div>
         <section className='contenedor-bloques'>
             <section className={activo === 1 ? 'bloque-activo' : 'bloque-desactivo'} ><RenderizarTodas tareas={tareas} setTareas={setTareas}/> </section>
-            <section className={activo === 2 ? 'bloque-activo' : 'bloque-desactivo'} >Por Hacer</section>
-            <section className={activo === 3 ? 'bloque-activo' : 'bloque-desactivo'} >Realizadas</section>
+            <section className={activo === 2 ? 'bloque-activo' : 'bloque-desactivo'} ><PorHacer tareas={tareas} setTareas={setTareas}/></section>
+            <section className={activo === 3 ? 'bloque-activo' : 'bloque-desactivo'} ><Completadas tareas={tareas} setTareas={setTareas}/></section>
             <section className={activo === 4 ? 'bloque-activo' : 'bloque-desactivo'} ><TaskForm setTareas={setTareas}/></section>
         </section> 
     </> //pasamos la lista de tareas actuales y la funcion setTareas

@@ -1,4 +1,3 @@
-import IconoCrear from './media/iconos/create.svg'
 import BotonModoOscuro from './ModOscuro';
 export function Header() {
     console.log('colocamos el header');
