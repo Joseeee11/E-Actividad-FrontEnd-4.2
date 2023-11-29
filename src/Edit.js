@@ -39,7 +39,33 @@ export function ButtonEditar({ posicion, tareas, setTareas }) {
         <img src={pencilIMG} alt="Editar" />
       </button>
       ;
-      <div className={editando == true ? "editar-Abierto" : "editar-Cerrado"}>
+      <div className='flotanteEditar'   style={
+    editando
+      ? {
+        opacity: 1,
+        visibility: "visible",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        transition: "opacity 0.3s linear",
+      }
+    : {
+        display: "flex",
+        position: "fixed",
+        opacity: 0,
+        visibility: "hidden",
+        overflow: 'hidden',
+        transition: "visibility 0s 0.3s, opacity 0.3s linear",
+        width:0,
+        height:0,
+        
+      }
+  } >
         <div className="flotante">
           <form className="formulario divEdit">
             <label>
