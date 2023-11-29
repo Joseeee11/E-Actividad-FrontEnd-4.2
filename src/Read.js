@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
-import {Renderizar} from './Renderizar'
+import {RenderizarTodas} from './Renderizar'
+import TaskForm from './Crear'
 import IconoCrear from './media/iconos/create.svg'
 // import { Header } from './Header';
 
@@ -41,16 +42,16 @@ export function Read() {
 
     return <> 
         <div className='pestanas'>
-            <button onClick={() => pestañas(1) } className={activo === 1 ? 'button-activo' : 'button-desactivo'} > Por Hacer <span>9</span> {/*por ahora asi, luego se le añade la funcion para que cuente las tareas*/} </button>
-            <button onClick={() => pestañas(2) } className={activo === 2 ? 'button-activo' : 'button-desactivo'} > Realizadas <span>24</span> </button>
-            <button onClick={() => pestañas(3) } className={activo === 3 ? 'button-activo' : 'button-desactivo'} > Atrasadas <span>3</span> </button>
+            <button onClick={() => pestañas(1) } className={activo === 1 ? 'button-activo' : 'button-desactivo'} > Creadas <span>9</span> {/*por ahora asi, luego se le añade la funcion para que cuente las tareas*/} </button>
+            <button onClick={() => pestañas(2) } className={activo === 2 ? 'button-activo' : 'button-desactivo'} > Por Hacer <span>24</span> </button>
+            <button onClick={() => pestañas(3) } className={activo === 3 ? 'button-activo' : 'button-desactivo'} > Realizadas <span>3</span> </button>
             <button onClick={() => pestañas(4) } className={activo === 4 ? 'button-activo' : 'button-desactivo'} > <img src={IconoCrear} alt='Crear Lista'/> </button>
         </div>
         <section className='contenedor-bloques'>
-            <section className={activo === 1 ? 'bloque-activo' : 'bloque-desactivo'} ><Renderizar tareas={tareas} setTareas={setTareas}/> </section>
-            <section className={activo === 2 ? 'bloque-activo' : 'bloque-desactivo'} >Realizadas</section>
-            <section className={activo === 3 ? 'bloque-activo' : 'bloque-desactivo'} >Completas</section>
-            <section className={activo === 4 ? 'bloque-activo' : 'bloque-desactivo'} >Crear</section>
+            <section className={activo === 1 ? 'bloque-activo' : 'bloque-desactivo'} ><RenderizarTodas tareas={tareas} setTareas={setTareas}/> </section>
+            <section className={activo === 2 ? 'bloque-activo' : 'bloque-desactivo'} >Por Hacer</section>
+            <section className={activo === 3 ? 'bloque-activo' : 'bloque-desactivo'} >Realizadas</section>
+            <section className={activo === 4 ? 'bloque-activo' : 'bloque-desactivo'} ><TaskForm setTareas={setTareas}/></section>
         </section> 
     </> //pasamos la lista de tareas actuales y la funcion setTareas
 }

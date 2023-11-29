@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-const TaskForm = () => {
+const TaskForm = ({setTareas}) => {
   const [task, setTask] = useState({
-    title: '',
-    description: '',
+    titulo: '',
+    descripcion: '',
     importance: '',
-    date: ''
+    date: '',
+    estado: 'false'
   });
 
   const handleChange = (e) => {
@@ -17,43 +18,45 @@ const TaskForm = () => {
   };
 
   const handleSaveTask = () => {
+    console.log('estamos guardando')
     // Obtener tareas existentes del localStorage
-    const existingTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const existingTasks = JSON.parse(localStorage.getItem('tareas')) || [];
     
     // Agregar la nueva tarea al array
     const updatedTasks = [...existingTasks, task];
 
     // Guardar el array actualizado en el localStorage
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+    setTareas(updatedTasks)
 
     // Limpiar el estado después de guardar
     setTask({
-      title: '',
-      description: '',
+      titulo: '',
+      descripcion: '',
       importance: '',
-      date: ''
+      date: '',
+      estado: 'false'
     });
   };
 
   return (
-    <div>
+    <form>
       <label>
         Título:
-        <input type="text" name="title" value={task.title} onChange={handleChange} />
+        <input type="text" name="titulo" value={task.titulo} onChange={handleChange} />
       </label>
       <br />
       <label>
         Descripción:
-        <textarea name="description" value={task.description} onChange={handleChange} />
+        <textarea name="descripcion" value={task.descripcion} onChange={handleChange} />
       </label>
       <br />
       <label>
         Importancia:
         <select name="importance" value={task.importance} onChange={handleChange}>
           <option value="">Seleccionar</option>
-          <option value="alta">Alta</option>
-          <option value="media">Media</option>
-          <option value="baja">Baja</option>
+          <option value="IMPORTANTE">Importante</option>
+          <option value="URGENTE">Urgente</option>
+          <option value="NORMAL">Normal</option>
         </select>
       </label>
       <br />
@@ -63,7 +66,7 @@ const TaskForm = () => {
       </label>
       <br />
       <button onClick={handleSaveTask}>Guardar tarea</button>
-    </div>
+    </form>
   );
 };
 

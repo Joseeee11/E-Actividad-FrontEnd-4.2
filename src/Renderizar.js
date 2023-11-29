@@ -1,8 +1,8 @@
-import imagenOso from "./media/_7decf490-d2ac-4192-85c2-0efcbe73cd8c.png";
+import imagenOso from "./media/OsoLista.png";
 import { ButtonDelete } from './Delete'
 
 
-export function Renderizar({tareas, setTareas}) {
+export function RenderizarTodas({tareas, setTareas}) {
     if (tareas.length === 0 || !tareas) {
       return (
         <>
@@ -15,17 +15,15 @@ export function Renderizar({tareas, setTareas}) {
           {tareas.map((tarea, i) => (
             <div key={i} >
               <div>
+                <p>{tarea.date}</p>
                 <button type="button"></button>
               </div>
               <div>
                 <h2>{tarea.titulo}</h2>
-                <p>{tarea.descripcion}</p>
+                <p>Descripción: {tarea.descripcion}</p>
               </div>
               <div>
-                <div>
-                <h3>{tarea.date} date</h3>
-                <h3>{tarea.importance} importancia</h3>
-                </div>
+                <h3>{tarea.importance}</h3>
                 <div>
                   <ButtonDelete posicion={i} tareas={tareas} setTareas={setTareas} />
                   <button>edit</button>
