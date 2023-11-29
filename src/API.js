@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import { Prueba } from './Prueba';
+import {Leer} from './Leer'
 import IconoCrear from './media/iconos/create.svg'
 // import { Header } from './Header';
 
@@ -46,7 +47,7 @@ export function API() {
             <button onClick={() => pestañas(4) } className={activo === 4 ? 'button-activo' : 'button-desactivo'} > <img src={IconoCrear} alt='Crear Lista'/> </button>
         </div>
         <section className='contenedor-bloques'>
-            <section className={activo === 1 ? 'bloque-activo' : 'bloque-desactivo'} ><Prueba tareas={tareas} setTareas={setTareas}/></section>
+            <section className={activo === 1 ? 'bloque-activo' : 'bloque-desactivo'} ><Prueba tareas={tareas} setTareas={setTareas}/> <Leer/> </section>
             <section className={activo === 2 ? 'bloque-activo' : 'bloque-desactivo'} >Realizadas</section>
             <section className={activo === 3 ? 'bloque-activo' : 'bloque-desactivo'} >Completas</section>
             <section className={activo === 4 ? 'bloque-activo' : 'bloque-desactivo'} >Crear</section>
