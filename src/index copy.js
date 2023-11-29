@@ -1,4 +1,4 @@
-//index para probar delete mientras
+// //index para probar delete mientras
 
 // //importamos React
 // import React from 'react';
@@ -15,6 +15,8 @@
 // root.render(
 //   <>
 //     <Header/>
-//     <API/>
+//     <div>
+//       <API/>
+//     </div>
 //   </>
 // );

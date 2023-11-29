@@ -1,5 +1,5 @@
 /* tipografias */
-@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Jua&display=swap');
 /* Paleta de Colores:  #83A2FF #B4BDFF #FFE3BB #FFD28F */
 /* Colores para etiquetas:  IMPORTANTE -> #BDF5AF  URGENTE -> #F59F93  NORMAL -> #9EF5EE */
 
@@ -15,65 +15,81 @@ body {
   background-color: #c5ccfc;
 }
 header {
-  display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
+  display: flex;
+  align-items: center;
 
   background-color: #f2f2f2;
-  height: 10vh;
+  height: 15vh;
 }
 h1 {
-  margin: auto auto auto 8px;
+  margin: auto auto auto 10px;
   font-family: 'Original Surfer', sans-serif;
 }
 
 /* PESTAÑAS */
 .pestanas {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr .5fr;
+
 }
 .pestanas button {
-  background-color: #83A2FF;
+  height: 10vh;
 
   border-left: 3px solid #435384;
   border-top: 3px solid #435384;
   border-right: 3px solid #435384;
   border-bottom: none;
-}
-.pestanas button:active {
-  background-color: #c5ccfc;
 
+  font-size: 3vh;
 }
 .pestanas button span{
   margin: auto 5px;
   padding: 4px 7px;
   background-color: #435384;
+
+  font-size: 2vh;
+  font-family: 'Jua', sans-serif;
+
   border-radius: 40%;
 }
-
 .pestanas button img {
   width: 3vh;
 
 }
-
+/* Funcionalidad PESTAÑAS */
+.contenedor-bloques {
+  position: relative;
+}
+.contenedor-bloques section {
+  position: absolute;
+  top: 2vh;
+}
+.bloque-desactivo {
+  opacity: 0;
+}
+.bloque-activo {
+  opacity: 1;
+}
+.button-desactivo {
+  background-color: #83A2FF;
+}
+.button-activo {
+  background-color: #c5ccfc;
+}
 
 
 /* RESPONSIVE */
 @media (max-width: 720px) and (max-height: 1280px) {
-  header {
-    grid-template-columns: none;
-    grid-template-rows: 1fr 1fr;
-  }
   h1 {
     margin: 2vh auto;
   }
-  .pestanas {
-    /* margin-top: 2vh; */
-  }
   .pestanas button {
-    height: 10vh;
+    font-size: 2.3vh;
+    height: 12vh;
   }
   .pestanas button span{
     display: inline-block;
     margin: 2px 5px;
+    font-size: 1.8vh;
   }
 }
