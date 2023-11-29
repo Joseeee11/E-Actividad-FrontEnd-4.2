@@ -227,6 +227,8 @@ p {
   }
   .titulo-descripcion {
     text-align: center;
+    margin: auto;
+    width: 80%;
   }
 
   /* botones delete edit */
