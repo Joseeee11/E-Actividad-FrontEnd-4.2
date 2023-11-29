@@ -42,7 +42,7 @@ export function ButtonEditar({ posicion, tareas, setTareas }) {
       <div className='flotanteEditar'   style={
     editando
       ? {
-        opacity: 1,
+        backgroundColor: 'rgb(15,15,15,0.5)',
         visibility: "visible",
         display: "flex",
         justifyContent: "center",
