@@ -7,10 +7,10 @@ export function PorHacer({tareas}) {
 
     if (!tareasPorHacer || tareasPorHacer.length === 0) {
         return (
-          <>
-            <img src={imagenOso} alt="Oso con una lista" />
-            <p>No hay Tareas Por Hacer</p>
-          </>
+          <div className="no-tareas">
+              <img className="osito" src={imagenOso} alt="Oso con una lista" />
+              <p>No hay Tareas Completadas</p>
+          </div>
         );
       } else {
         return <>
@@ -39,10 +39,10 @@ export function Completadas({tareas}) {
 
     if (!tareasCompletadas || tareasCompletadas.length === 0) {
         return (
-          <>
-            <img src={imagenOso} alt="Oso con una lista" />
-            <p>No hay Tareas Completadas</p>
-          </>
+          <div className="no-tareas">
+              <img className="osito" src={imagenOso} alt="Oso con una lista" />
+              <p>No hay Tareas Completadas</p>
+          </div>
         );
       } else {
         return <>

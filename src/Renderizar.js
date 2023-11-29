@@ -7,10 +7,10 @@ import IconoEditar from './media/iconos/pencil-solid.svg'
 export function RenderizarTodas({tareas, setTareas}) {
     if (!tareas || tareas.length === 0) {
       return (
-        <>
-          <img src={imagenOso} alt="Oso con una lista" />
-          <p>No hay tareas, agrega una</p>
-        </>
+        <div className="no-tareas">
+          <img className="osito" src={imagenOso} alt="Oso con una lista" />
+          <p>No hay Tareas Completadas</p>
+        </div>
       );
     } else {
       return <>
