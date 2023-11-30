@@ -6,8 +6,8 @@ export function ButtonDelete({posicion, tareas, setTareas}) {
 }
 
 function Delete(posicion, tareas, setTareas) {
-    console.log('borrando')
+    // console.log('borrando')
     const tareaBorrada = tareas.filter((tarea, i) => i !== posicion)
-    console.log(tareaBorrada)
+    // console.log(tareaBorrada)
     setTareas(tareaBorrada) //mandamos a que actualice la lista de tareas
 }

@@ -7,7 +7,7 @@ export function ButtonEditar({ posicion, tareas, setTareas }) {
   const [descripcion, setDescripcion] = useState(tareas[posicion].descripcion);
   const [importance, setImportance] = useState(tareas[posicion].importance);
   const [date, setDate] = useState(tareas[posicion].date);
-  console.log(titulo, descripcion, importance, date);
+//   console.log(titulo, descripcion, importance, date);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +38,6 @@ export function ButtonEditar({ posicion, tareas, setTareas }) {
       >
         <img src={pencilIMG} alt="Editar" />
       </button>
-      ;
       <div className='flotanteEditar'   style={
     editando
       ? {

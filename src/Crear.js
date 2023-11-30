@@ -18,7 +18,7 @@ const TaskForm = ({setTareas}) => {
   };
 
   const handleSaveTask = () => {
-    console.log('estamos guardando')
+    // console.log('estamos guardando')
     // Obtener tareas existentes del localStorage
     const existingTasks = JSON.parse(localStorage.getItem('tareas')) || [];
     

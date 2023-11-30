@@ -3,7 +3,7 @@ import imagenOso from "./media/OsoLista.png";
 export function PorHacer({tareas}) {
 
     const tareasPorHacer = tareas.filter(tarea => tarea.estado === false);
-    console.log(tareasPorHacer);
+    // console.log(tareasPorHacer);
 
     if (!tareasPorHacer || tareasPorHacer.length === 0) {
         return (
@@ -35,7 +35,7 @@ export function PorHacer({tareas}) {
 
 export function Completadas({tareas}) {
     const tareasCompletadas = tareas.filter(tarea => tarea.estado === true);
-    console.log(tareasCompletadas);
+    // console.log(tareasCompletadas);
 
     if (!tareasCompletadas || tareasCompletadas.length === 0) {
         return (

@@ -17,7 +17,7 @@ export function Read() {
         if (listaTareas) {
             setTareas(listaTareas); //la mandamos a que actualice la lista en el front
         } else {
-            console.log('no hay tareas')
+            // console.log('no hay tareas')
             setTareas([]); //pa que no de error al estar vacio gente (tecnicamente no se si era por esto el error pero bueno porsia)
         }
     }, []);
@@ -27,22 +27,22 @@ export function Read() {
         localStorage.setItem('tareas', JSON.stringify(tareas));
     }, [tareas]);
 
-    console.log(typeof(tareas),tareas)
+    // console.log(typeof(tareas),tareas)
 
     const [activo, setActivo] = useState(1); //estado actual siempre el 1
     function pestañas(id){
-        console.log('cambio boton:', id);
+        // console.log('cambio boton:', id);
         setActivo(id);
     }
 
-    console.log(activo)
-    console.log(tareas)
+    // console.log(activo)
+    // console.log(tareas)
 
     return <> 
         <div className='pestanas'>
-            <button onClick={() => pestañas(1) } className={activo === 1 ? 'button-activo' : 'button-desactivo'} > Creadas <span>9</span> {/*por ahora asi, luego se le añade la funcion para que cuente las tareas*/} </button>
-            <button onClick={() => pestañas(2) } className={activo === 2 ? 'button-activo' : 'button-desactivo'} > Por Hacer <span>24</span> </button>
-            <button onClick={() => pestañas(3) } className={activo === 3 ? 'button-activo' : 'button-desactivo'} > Realizadas <span>3</span> </button>
+            <button onClick={() => pestañas(1) } className={activo === 1 ? 'button-activo' : 'button-desactivo'} > Creadas  {/*por ahora asi, luego se le añade la funcion para que cuente las tareas*/} </button>
+            <button onClick={() => pestañas(2) } className={activo === 2 ? 'button-activo' : 'button-desactivo'} > Por Hacer  </button>
+            <button onClick={() => pestañas(3) } className={activo === 3 ? 'button-activo' : 'button-desactivo'} > Realizadas  </button>
             <button onClick={() => pestañas(4) } className={activo === 4 ? 'button-activo' : 'button-desactivo'} > <img src={IconoCrear} alt='Crear Lista'/> </button>
         </div>
         <section className='contenedor-bloques'>
